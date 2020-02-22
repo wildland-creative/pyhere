@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.1.0",
     author="Josh P. Sawyer",
     author_email="josh.p.sawyer@gmail.com",
-    description="",
+    description="Load files easily using relative path names and simple heuristics",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/joshpsawyer/pyhere",
