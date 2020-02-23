@@ -59,7 +59,7 @@ def find_root(path = None):
         
         next_path = path / ".."
         
-        if (next_path != path):
+        if (next_path.resolve() != path.resolve()):
             return find_root(next_path)
         else:
             warnings.warn("No project indicator found - returning root system directory")
