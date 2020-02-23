@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from os import chdir
 import pytest
 
 from pyhere import __version__
@@ -14,10 +14,24 @@ def test_version():
        
 def test_here(tmp_path):
     # create dummy project
-    # change working directory to src folder
-    # generate here to data in data folder
-    # assert paths
-    assert True
+    f1 = tmp_path / "proj" / "src"
+    f1.mkdir(parents=True, exist_ok=True)
+
+    f2 = tmp_path / "proj" / "data"
+    f2.mkdir(parents=True, exist_ok=True)
+    
+    # create a .here file at the project root
+    tmp_path.joinpath("proj").joinpath(".here").touch()
+    
+    # create a fake data file
+    f2.joinpath("data.csv").touch()
+
+    # set working dir to the src directory
+    chdir(f1)
+    
+    herepath = here("data", "data.csv")
+    
+    assert herepath.resolve() == f2.joinpath("data.csv").resolve()
     
 def test_set_here(tmp_path):
     # create dummy project
