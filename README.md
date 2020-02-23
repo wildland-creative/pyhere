@@ -17,7 +17,7 @@ pip install pyhere
 And if you want to be on the bleeding edge of development, get the latest version from github:
 
 ```bash
-pip install --editable=git+https://github.com/joshpsawyer/extarc.git#egg=extarc
+pip install --editable=git+https://github.com/joshpsawyer/pyhere.git#egg=pyhere
 ```
 
 ### conda
@@ -27,9 +27,10 @@ Not in conda, yet - just install it from pip in your environment.
 ## Usage
 
 ```python
-from pyhere import here
+In: from pyhere import here
 
-here("your", "relative", "directory", "file.txt")
+In: here("your", "relative", "directory", "file.txt")
+Out: 'C:\\proj\\code\\pyhere\\your\\relative\\directory\\file.txt'
 ```
 
 `pyhere` uses simple heuristics to find a project's root directory. From `os.cwd()`, it traverses upwards, looking for a possible `root_indicator`:
