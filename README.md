@@ -67,6 +67,13 @@ data = here("data", "data1.csv")
 
 from `script.py`, you'll get a `Path` object representing `\project\data\data1.csv`.
 
+### In consideration of arcpy
+
+`arcpy` wants a string for in / out feature classes. Wrap `here()` in `str()` as follows:
+
+```python
+polyline = str(here("data.gdb", "f_dataset", "roads"))
+```
 
 [1]: https://github.com/r-lib/here
 [2]: https://github.com/chendaniely
