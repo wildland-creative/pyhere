@@ -27,13 +27,13 @@ Not in conda, yet - just install it from pip in your environment.
 ## Usage
 
 ```python
-In: from pyhere import here
+from pyhere import here
 
-In: here("your", "relative", "directory", "file.txt")
-Out: 'C:\\proj\\code\\pyhere\\your\\relative\\directory\\file.txt'
+relative_dirA = here("your", "relative", "directory", "file.txt")
+relative_dirB = here("your/relative/directory/file.txt")
 ```
 
-`pyhere` uses simple heuristics to find a project's root directory. From `os.cwd()`, it traverses upwards, looking for a possible `root_indicator`:
+`pyhere` uses simple heuristics to find a project's root directory. From `Path.cwd()`, it traverses upwards, looking for a possible `root_indicator`:
 
 ```python
 root_indicators = [
@@ -49,7 +49,7 @@ root_indicators = [
 ]
 ```
 
-When found, it attaches to that root path all arguments passed to `here()`. If it reaches the system root, it returns the system root and throws a warning. Returned values are strings.
+When found, it joins the arguments passed to `here()` to the rootpath and returns as a `Path` object. If it reaches the system root, it returns the system root and throws a warning.
 
 For a concrete example, imagine the following directory structure:
 
@@ -65,7 +65,7 @@ If you call
 data = here("data", "data1.csv")
 ```
 
-from `script.py`, you'll get a string representing `\project\data\data1.csv` with your system specific path formatting.
+from `script.py`, you'll get a `Path` object representing `\project\data\data1.csv`.
 
 
 [1]: https://github.com/r-lib/here

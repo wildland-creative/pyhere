@@ -1,3 +1,10 @@
+import sys
+
+if sys.version_info[0] == 2:
+    from pathlib2 import Path
+else:
+    from pathlib import Path
+
 import os
 import warnings
 
@@ -16,10 +23,12 @@ root_indicators = [
 # credit to ThiefMaster on stack overflow for a simple touch function
 # https://stackoverflow.com/questions/12654772/create-empty-file-using-python
 def touch(path):
-    basedir = os.path.dirname(path)
+    if type(path) is str:
+        basedir = Path(path)
+    else:
+        basedir = path
     
-    if not os.path.exists(basedir):
-        os.makedirs(basedir)
+    basedir.parent.mkdir(parents=True, exist_ok=True)
 
     with open(path, 'a'):
         os.utime(path, None)
@@ -28,30 +37,28 @@ def here(*args):
     heredir = find_root()
     
     for arg in args:
-        heredir = os.path.join(heredir, arg)
+        heredir = heredir / arg
       
     return heredir
 
 def set_here(wd = None):
     if wd is None:
-        wd = os.getcwd()
+        wd = Path.cwd()
 
-    touch(os.path.join(wd, ".here"))
+    touch(wd / ".here")
         
 def find_root(path = None):
     if path is None:
-        return find_root(os.getcwd())
+        return find_root(Path.cwd())
     else:
         for root_indicator in root_indicators:
-            if os.path.isfile(os.path.join(path, root_indicator)):
-                return os.path.abspath(path)
-            elif os.path.isdir(os.path.join(path, root_indicator)):
-                return os.path.abspath(path)
+            if path.joinpath(root_indicator).exists():
+                return path
         
-        next_path = os.path.join(path, "..")
+        next_path = path / ".."
         
-        if (os.path.realpath(next_path) != os.path.realpath(path)):
-            return find_root(os.path.join(path, ".."))
+        if (next_path != path):
+            return find_root(next_path)
         else:
             warnings.warn("No project indicator found - returning root system directory")
-            return os.path.abspath(path)
+            return path
