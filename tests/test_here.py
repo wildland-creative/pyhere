@@ -41,9 +41,7 @@ def test_set_here(tmp_path):
     "r_indicator",
     root_indicators,
 )
-def test_find_root_from_indicator(tmp_path, r_indicator):
-    r_indicator = ".here"
-    
+def test_find_root_from_indicator(tmp_path, r_indicator):   
     # create /proj/r_indicator
     f1 = tmp_path / "proj" / r_indicator
     f1.mkdir(parents=True, exist_ok=True)
