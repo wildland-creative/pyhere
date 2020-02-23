@@ -22,14 +22,6 @@ root_indicators = [
     ".ropeproject" # rope
 ]
 
-# credit to ThiefMaster on stack overflow for a simple touch function
-# https://stackoverflow.com/questions/12654772/create-empty-file-using-python
-def touch(path):
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-    with open(path, 'a'):
-        os.utime(path, None)
-
 def here(*args):
     heredir = find_root()
     
@@ -44,7 +36,8 @@ def set_here(wd = None):
     elif type(wd) is str:
         wd = Path(wd)
 
-    touch(wd / ".here")
+    wd.parent.mkdir(parents=True, exist_ok=True)
+    wd.joinpath(".here").touch()
         
 def find_root(path = None):
     if path is None:
