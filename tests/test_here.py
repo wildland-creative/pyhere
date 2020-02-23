@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from os import chdir
+import sys
 import pytest
 
 from pyhere import __version__
@@ -27,7 +28,10 @@ def test_here(tmp_path):
     f2.joinpath("data.csv").touch()
 
     # set working dir to the src directory
-    chdir(f1)
+    if sys.version_info[0] == 2:
+        chdir(str(f1))
+    else:
+        chdir(f1)
     
     herepath = here("data", "data.csv")
     
