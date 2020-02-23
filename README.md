@@ -49,7 +49,7 @@ root_indicators = [
 ]
 ```
 
-When found, it returns that directory. If it reaches the system root, it returns the system root and throws a warning. Returned values are strings.
+When found, it attaches to that root path all arguments passed to `here()`. If it reaches the system root, it returns the system root and throws a warning. Returned values are strings.
 
 For a concrete example, imagine the following directory structure:
 
