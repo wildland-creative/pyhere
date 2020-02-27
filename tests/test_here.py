@@ -11,7 +11,7 @@ from pyhere import root_indicators
 
 # this test is to ensure I don't mess up versioning
 def test_version():
-    assert __version__ == "0.2.0"
+    assert __version__ == "1.0.0"
        
 def test_here(tmp_path):
     # create dummy project
