@@ -7,7 +7,6 @@ if sys.version_info[0] == 2:
 else:
     from pathlib import Path
 
-import os
 import warnings
 
 root_indicators = [
