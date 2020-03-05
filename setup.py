@@ -14,7 +14,7 @@ setuptools.setup(
     description="Load files easily using relative path names and simple heuristics",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/joshpsawyer/pyhere",
+    url="https://github.com/dorkwood/pyhere",
     packages=setuptools.find_packages(),
     classifiers=[
         'Intended Audience :: Science/Research',
