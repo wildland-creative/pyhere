@@ -1,6 +1,6 @@
 # pyhere
 
-[![Build Status](https://travis-ci.com/joshpsawyer/pyhere.svg?branch=master)](https://travis-ci.com/joshpsawyer/pyhere)
+[![Build Status](https://travis-ci.com/dorkwood/pyhere.svg?branch=master)](https://travis-ci.com/joshpsawyer/pyhere)
 [![Latest pypi version](https://img.shields.io/pypi/v/pyhere)](https://pypi.org/project/pyhere/)
 
 A Python 2.x / 3.x equivalent of R's [`here`][1] package, drawing inspiration from [chendaniely][2]'s [`pyprojroot`][3] package, but more closely mirroring the functionality within R's `here`. Relative file referencing has never been easier!
@@ -67,14 +67,6 @@ data = here("data", "data1.csv")
 ```
 
 from `script.py`, you'll get a `Path` object representing `\project\data\data1.csv`.
-
-### In consideration of arcpy
-
-`arcpy` wants a string for in / out feature classes. Wrap `here()` in `str()` as follows:
-
-```python
-polyline = str(here("data.gdb", "f_dataset", "roads"))
-```
 
 [1]: https://github.com/r-lib/here
 [2]: https://github.com/chendaniely
