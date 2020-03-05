@@ -5,6 +5,8 @@
 
 A Python 2.x / 3.x equivalent of R's [`here`][1] package, drawing inspiration from [chendaniely][2]'s [`pyprojroot`][3] package, but more closely mirroring the functionality within R's `here`. Relative file referencing has never been easier!
 
+For complete information, check out the [docs](docs).
+
 ## Installation
 
 ### pip

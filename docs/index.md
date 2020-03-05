@@ -121,3 +121,7 @@ Pre-release not ready for production.
 ### 0.1.0 (2020-02-23)
 
 Pre-release not ready for production.
+
+[1]: https://github.com/r-lib/here
+[2]: https://github.com/chendaniely
+[3]: https://github.com/chendaniely/pyprojroot
