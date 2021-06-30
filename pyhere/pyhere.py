@@ -89,7 +89,7 @@ def find_root(path = None):
     else:
         for root_indicator in root_indicators:
             if path.joinpath(root_indicator).exists():
-                return path
+                return path.resolve()
         
         next_path = path / ".."
         
@@ -100,4 +100,4 @@ def find_root(path = None):
             warnings.warn(
                 "No project indicator found - returning root system directory"
             )
-            return path
+            return path.resolve()
