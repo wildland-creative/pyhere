@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
+## [1.0.3] - 2024-07-26
+
+### Changed
+
+- Added `resolve()` to the returned path from `here()`. Before it returned a relative path.
+
 ## [1.0.2] - 2021-06-29
 
 ### Added

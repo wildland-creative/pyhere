@@ -43,7 +43,7 @@ def here(*args):
     for arg in args:
         heredir = heredir / arg
       
-    return heredir
+    return heredir.resolve()
 
 def set_here(wd = None):
     """

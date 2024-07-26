@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyhere",
-    version="1.0.2",
+    version="1.0.3",
     author="Josh P. Sawyer",
     author_email="josh@joshpsawyer.com",
     license="MIT",

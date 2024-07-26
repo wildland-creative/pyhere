@@ -1,6 +1,6 @@
 # pyhere
 
-[![Build Status](https://travis-ci.com/wildland-creative/pyhere.svg?branch=master)](https://travis-ci.com/wildland-creative/pyhere)
+[![Build Status](https://app.travis-ci.com/wildland-creative/pyhere.svg?token=GxyKmrsgdFZwzkt4xB3m&branch=master)](https://travis-ci.com/wildland-creative/pyhere)
 [![Latest pypi version](https://img.shields.io/pypi/v/pyhere)](https://pypi.org/project/pyhere/)
 
 A Python 2.x / 3.x equivalent of R's [`here`][1] package, drawing inspiration from [chendaniely][2]'s [`pyprojroot`][3] package, but more closely mirroring the functionality within R's `here`. Relative file referencing has never been easier!

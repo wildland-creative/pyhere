@@ -1,8 +1,8 @@
 # pyhere: stopping path madness today
 
-Release v1.0.0.
+Release v1.0.3.
 
-[![Build Status](https://travis-ci.com/dorkwood/pyhere.svg?branch=master)](https://travis-ci.com/joshpsawyer/pyhere)
+[![Build Status](https://app.travis-ci.com/wildland-creative/pyhere.svg?token=GxyKmrsgdFZwzkt4xB3m&branch=master)](https://app.travis-ci.com/github/wildland-creative/pyhere?serverType=git)
 [![Latest pypi version](https://img.shields.io/pypi/v/pyhere)](https://pypi.org/project/pyhere/)
 
 # The User Guide
