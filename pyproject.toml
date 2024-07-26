@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+version = "1.0.3"
+authors = [
+  {name = "Josh P. Sawyer", email = "josh@joshpsawyer.com"},
+]
+name = "pyhere"
+requires-python = ">=2.7"
+description="Load files easily using relative path names and simple heuristics"
+readme = {file = "README.md", content-type = "text/markdown"}
+classifiers=[
+    'Intended Audience :: Science/Research',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+    "License :: OSI Approved :: MIT License",
+]
+license = {text = "MIT License"}
+
+[project.urls]
+Documentation = "https://wildland-creative.github.io/pyhere/"
+Repository = "https://github.com/wildland-creative/pyhere"
+Changelog = "https://github.com/wildland-creative/pyhere/blob/master/CHANGELOG.md"
