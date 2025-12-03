@@ -11,6 +11,7 @@ import warnings
 
 root_indicators = [
     ".here",
+    "pyproject.toml",
     "requirements.txt",
     "setup.py",
     ".vscode", # vscode project
